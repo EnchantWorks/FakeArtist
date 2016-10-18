@@ -14,6 +14,7 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // toruko
     }
 
     override func didReceiveMemoryWarning() {
