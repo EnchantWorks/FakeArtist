@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7AE2A8048EC3B4691CFEAD63A605F8F082F6E4D4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7AE2A8048EC3B4691CFEAD63A605F8F082F6E4D4" : 9223372036854775807,
+    "7D29D36F1CE3143FD6B3B7720EEE0971F56DD91A" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5982CB41-DA4D-4506-9EB1-B136E4C6B848",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7AE2A8048EC3B4691CFEAD63A605F8F082F6E4D4" : "fake\/",
+    "7D29D36F1CE3143FD6B3B7720EEE0971F56DD91A" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "fake",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "fake.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/EnchantWorks\/FakeArtist",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7AE2A8048EC3B4691CFEAD63A605F8F082F6E4D4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yu-hi06\/ios-app",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7D29D36F1CE3143FD6B3B7720EEE0971F56DD91A"
+    }
+  ]
+}
