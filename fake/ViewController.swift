@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // 背景色をwhiteに設定する.
         self.view.backgroundColor = UIColor.white
+        self.title = "start"
         //ラベルの作成
         // ラベルのサイズを定義.
         let bWidth: CGFloat = 200
@@ -44,7 +45,7 @@ class ViewController: UIViewController {
         // 遷移するViewを定義する.
         let NextViewController: UIViewController = UserAddViewController()
         //viewの遷移
-        self.present(NextViewController, animated: false, completion: nil)
+        self.navigationController?.pushViewController(NextViewController, animated: false)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
