@@ -12,7 +12,8 @@ class UserAddViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     let myItems: NSMutableArray = []
     var myTableView: UITableView!
-    private var count = 1
+    private var count = 0 //ユーザー数のカウント用
+    var userlist = UserList() //ユーザーデータ格納
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,7 @@ class UserAddViewController: UIViewController, UITableViewDelegate, UITableViewD
         userButton.setTitle("ユーザー追加", for: .normal)
         userButton.layer.cornerRadius = 20.0
         userButton.layer.position = CGPoint(x: self.view.bounds.width/2 , y:self.view.bounds.height-120)
-        userButton.addTarget(self, action: #selector(onClickMyButton(sender:)), for: .touchUpInside)
+        userButton.addTarget(self, action: #selector(addUserButton(sender:)), for: .touchUpInside)
         //////////////////////////////////////////////
 
         // GAMESTARTボタンを生成する.
@@ -60,7 +61,7 @@ class UserAddViewController: UIViewController, UITableViewDelegate, UITableViewD
         nextButton.setTitle("GAME START", for: .normal)
         nextButton.layer.cornerRadius = 20.0
         nextButton.layer.position = CGPoint(x: self.view.bounds.width/2 , y:self.view.bounds.height-50)
-        nextButton.addTarget(self, action: #selector(onClickMyButton(sender:)), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(StartButton(sender:)), for: .touchUpInside)
         //////////////////////////////////////////////
         
         // ボタンを追加する.
@@ -69,16 +70,30 @@ class UserAddViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         // Do any additional setup after loading the view.
     }
-    internal func onClickMyButton(sender: UIButton) {
-        if sender.currentTitle == "ユーザー追加" {
-            myItems.add("ユーザー" + String(count))
+    
+    //ユーザー追加ボタンを押した時
+    internal func addUserButton(sender: UIButton) {
+            let newname = "ユーザー" + String(count)
+            myItems.add(newname)
             myTableView.reloadData()
+            userlist.addUser(name: newname, id: count)
             count += 1
-        } else if sender.currentTitle == "GAME START" {
-        // 遷移するViewを定義する.
-        let NextViewController: UIViewController = IdentificationViewController()
-        //viewの遷移
-        self.present(NextViewController, animated: false, completion: nil)
+    }
+    //ゲームスタートボタンを押した時
+    internal func StartButton(sender: UIButton) {
+        if userlist.emptyuser() {
+            //ユーザーの順番をランダムに変更する。
+            userlist.randUserid()
+            //エセ芸術家をランダムに決める
+            userlist.randfakeartist()
+            //値の受け渡し
+            let app:AppDelegate =
+                (UIApplication.shared.delegate as! AppDelegate)
+            app.userlist = userlist
+            // 遷移するViewを定義する.
+            let NextViewController: UIViewController = IdentificationViewController()
+            //viewの遷移
+            self.present(NextViewController, animated: false, completion: nil)
         }
     }
 
@@ -99,7 +114,7 @@ class UserAddViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myItems.count
     }
-
+    
     /*
     // MARK: - Navigation
 
