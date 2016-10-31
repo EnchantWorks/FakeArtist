@@ -15,7 +15,7 @@
 		26436D5F1DB5EF7700799C72 /* VoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26436D5E1DB5EF7700799C72 /* VoteViewController.swift */; };
 		26436D611DB5EF8100799C72 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26436D601DB5EF8100799C72 /* ResultViewController.swift */; };
 		26436D631DB5EF8E00799C72 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26436D621DB5EF8E00799C72 /* AnswerViewController.swift */; };
-		26436D651DB5EF9A00799C72 /* FakeArtistWiinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26436D641DB5EF9A00799C72 /* FakeArtistWiinViewController.swift */; };
+		26436D651DB5EF9A00799C72 /* FakeArtistWinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26436D641DB5EF9A00799C72 /* FakeArtistWinViewController.swift */; };
 		26436D671DB5EFAB00799C72 /* ArtistWinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26436D661DB5EFAB00799C72 /* ArtistWinViewController.swift */; };
 		C28BB4311DBEE76C0013DBDA /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28BB4301DBEE76C0013DBDA /* UserList.swift */; };
 		C2CFCB4D1DC1BA5700B57CA1 /* VoteCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CFCB4C1DC1BA5700B57CA1 /* VoteCustomCell.swift */; };
@@ -55,7 +55,7 @@
 		26436D5E1DB5EF7700799C72 /* VoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteViewController.swift; sourceTree = "<group>"; };
 		26436D601DB5EF8100799C72 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		26436D621DB5EF8E00799C72 /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
-		26436D641DB5EF9A00799C72 /* FakeArtistWiinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeArtistWiinViewController.swift; sourceTree = "<group>"; };
+		26436D641DB5EF9A00799C72 /* FakeArtistWinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeArtistWinViewController.swift; sourceTree = "<group>"; };
 		26436D661DB5EFAB00799C72 /* ArtistWinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistWinViewController.swift; sourceTree = "<group>"; };
 		C28BB4301DBEE76C0013DBDA /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
 		C2CFCB4C1DC1BA5700B57CA1 /* VoteCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteCustomCell.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 				26436D5A1DB5EF5E00799C72 /* ArtistViewController.swift */,
 				26436D601DB5EF8100799C72 /* ResultViewController.swift */,
 				26436D621DB5EF8E00799C72 /* AnswerViewController.swift */,
-				26436D641DB5EF9A00799C72 /* FakeArtistWiinViewController.swift */,
+				26436D641DB5EF9A00799C72 /* FakeArtistWinViewController.swift */,
 				26436D5C1DB5EF6C00799C72 /* FakeArtistViewController.swift */,
 				26436D661DB5EFAB00799C72 /* ArtistWinViewController.swift */,
 				26436D5E1DB5EF7700799C72 /* VoteViewController.swift */,
@@ -312,7 +312,7 @@
 				26436D671DB5EFAB00799C72 /* ArtistWinViewController.swift in Sources */,
 				26436D631DB5EF8E00799C72 /* AnswerViewController.swift in Sources */,
 				26436D611DB5EF8100799C72 /* ResultViewController.swift in Sources */,
-				26436D651DB5EF9A00799C72 /* FakeArtistWiinViewController.swift in Sources */,
+				26436D651DB5EF9A00799C72 /* FakeArtistWinViewController.swift in Sources */,
 				26436D591DB5EF5000799C72 /* IdentificationViewController.swift in Sources */,
 				C2F5B2721DBB138A0099AF8F /* ViewController.swift in Sources */,
 				C2F5B2701DB719050099AF8F /* User.swift in Sources */,

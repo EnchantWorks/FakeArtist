@@ -13,6 +13,7 @@ class User {
     var name : String = ""
     var color = UIColor()
     var id : Int = 0
+    var votenum : Int = 0
     var fakeartist : Bool = false
     
 }

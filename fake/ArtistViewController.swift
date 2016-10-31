@@ -9,7 +9,7 @@
 import UIKit
 
 class ArtistViewController: UIViewController {
-
+    var userlist = UserList()
     override func viewDidLoad() {
         super.viewDidLoad()
 

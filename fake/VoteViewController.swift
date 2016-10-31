@@ -82,9 +82,14 @@ class VoteViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         // 遷移するViewを定義する.
         //let NextViewController: UIViewController = IdentificationViewController()
         //viewの遷移
-        let app:AppDelegate =
-            (UIApplication.shared.delegate as! AppDelegate)
-        app.userlist.phase()
+        userlist.votecom()
+        //let app:AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        userlist.phase()
+        if userlist.stagenum == 1 {
+            let NextViewController: UIViewController = ResultViewController()
+            //viewの遷移
+            self.present(NextViewController, animated: false, completion: nil)
+        }
         let NextViewController: UIViewController = IdentificationViewController()
         //viewの遷移
         self.present(NextViewController, animated: false, completion: nil)
@@ -114,6 +119,7 @@ class VoteViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         if cell.accessoryType == UITableViewCellAccessoryType.none && votecheck  {
             cell.accessoryType = UITableViewCellAccessoryType.checkmark
             votecheck = false
+            userlist.VoteAdd(num: indexPath.row)
         } else if cell.accessoryType == UITableViewCellAccessoryType.checkmark {
             cell.accessoryType = UITableViewCellAccessoryType.none
             votecheck = true

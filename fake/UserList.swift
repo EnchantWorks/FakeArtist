@@ -10,9 +10,10 @@ import UIKit
 
 class UserList{
     var userlist: [User] = []
-    var currentid:Int = 0
-    var stagenum:Int = 0
-    
+    var currentid:Int = 0 //現在進行中ユーザーのid
+    var stagenum:Int = 0 //identificationviewにてどの遷移にすべきかをステージ化
+    var vote : Int = 0 //票を入れられた側のid
+    var votename : String = ""
     func addUser(name:String,id:Int) {
         let newuser = User()
         newuser.name = name
@@ -82,10 +83,34 @@ class UserList{
     func randfakeartist() {
         let idx = Int(arc4random()) % userlist.count
         userlist[idx].fakeartist = true
+        print(userlist[idx].name)
     }
     //現手番のユーザーがエセ芸術家かどうか(trueはエセ芸術家である)
     func isFake() -> Bool {
      return userlist[currentid].fakeartist
+    }
+    
+    //投票数の加算
+    func VoteAdd(num: Int) {
+        vote = num
+    }
+    
+    //投票の確定
+    func votecom() {
+        userlist[vote].votenum += 1
+    }
+    //投票結果とエセ芸術家の照合 trueが正解
+    func compVoteFake()->Bool {
+        var maxnum = 0
+        var maxid = 0
+        for i in 0..<userlist.count {
+            if maxnum < userlist[i].votenum {
+                maxnum = userlist[i].votenum
+                maxid = i
+            }
+        }
+        votename = userlist[maxid].name
+        return userlist[maxid].fakeartist
     }
     
 }
