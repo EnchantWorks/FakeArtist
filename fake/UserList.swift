@@ -14,10 +14,15 @@ class UserList{
     var stagenum:Int = 0 //identificationviewにてどの遷移にすべきかをステージ化
     var vote : Int = 0 //票を入れられた側のid
     var votename : String = ""
+    let title: [String] = ["Apple","Bear","Cat","Dog","Elephant","Firefly","Gandum","House","Italy","Jellyfish","Kazuma","Lion","Monkey","NorthKorean","Octopas","PPAP","Queen","Rabbit","Sneak","Titech","USA","Vampire","Weapon","X'mas","Yesterday","Zebra"]
+    var titleid =  0
+    let ColorList : [UIColor] = [UIColor.black,UIColor.red ,UIColor.green ,UIColor.blue ,UIColor.cyan ,UIColor.yellow ,UIColor.magenta ,UIColor.orange ,UIColor.purple ,UIColor.brown,UIColor.darkGray ,UIColor.lightGray ,UIColor.white ,UIColor.gray]
+    
     func addUser(name:String,id:Int) {
         let newuser = User()
         newuser.name = name
         newuser.id = id
+        newuser.color = ColorList[id]
         userlist.append(newuser)
     }
     
@@ -79,11 +84,14 @@ class UserList{
         }
         return true
     }
-    //エセ芸術家をランダムに決めるメソッド
+    //エセ芸術家とお題をランダムに決めるメソッド
     func randfakeartist() {
         let idx = Int(arc4random()) % userlist.count
         userlist[idx].fakeartist = true
+        titleid =  Int(arc4random()) % title.count
         print(userlist[idx].name)
+        print(titleid)
+        
     }
     //現手番のユーザーがエセ芸術家かどうか(trueはエセ芸術家である)
     func isFake() -> Bool {

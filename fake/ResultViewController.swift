@@ -28,7 +28,7 @@ class ResultViewController: UIViewController {
         let bHeight: CGFloat = 100
         let posX: CGFloat = self.view.bounds.width/2 - bWidth/2
         let posY: CGFloat = self.view.bounds.height/4 - bHeight/2
-        let label: UILabel = UILabel(frame: CGRect(x: posX, y: posY, width: bWidth, height: bHeight))
+        let label: UITextView = UITextView(frame: CGRect(x: posX, y: posY, width: bWidth, height: bHeight))
         label.text = "投票の結果"+userlist.votename+"\nさんがエセ芸術家に\n選ばれました"
         label.textAlignment = NSTextAlignment.center
         self.view.addSubview(label)
