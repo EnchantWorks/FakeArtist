@@ -17,6 +17,8 @@ class ArtistViewController: UIViewController {
     var bezierPath = UIBezierPath()         //お絵描きに使用
     let defaultLineWidth: CGFloat = 5.0    //デフォルトの線の太さ
     var drawcount:Bool = true
+    var saveImage:UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.yellow
@@ -79,8 +81,9 @@ class ArtistViewController: UIViewController {
     }
     //書き直しボタンを押した時
     internal func reButton(sender: UIButton) {
-        let newimage = userlist.getImage()
-        self.CanvasView.image = newimage
+        //let newimage = userlist.getImage()
+        self.CanvasView.image = saveImage
+        bezierPath.removeAllPoints()
         drawcount = true
     
     }
@@ -111,6 +114,7 @@ class ArtistViewController: UIViewController {
         
         switch drawGesture.state {
         case .began:
+            saveImage = CanvasView.image
             lastPoint = touchPoint                  //タッチ座標をlastTouchPointとして保存する
             bezierPath.lineCapStyle = .round                            //描画線の設定 端を丸くする
             bezierPath.lineWidth = defaultLineWidth
@@ -146,13 +150,12 @@ class ArtistViewController: UIViewController {
         bezierPath.addQuadCurve(to: middlePoint, controlPoint: lastPoint)  //曲線を描く
         UIGraphicsBeginImageContext(canvas.size)                 //コンテキストを作成
         let canvasRect = CGRect(x:0, y:0, width:canvas.size.width, height:canvas.size.height)        //コンテキストのRect
-        UIGraphicsGetCurrentContext()!.clear(canvasRect)
         CanvasView.image?.draw(in: canvasRect)                                   //既存のCanvasを準備
         drawColor.setStroke()                                                           //drawをセット
         bezierPath.stroke()                                                             //draw実行
         let imageAfterDraw = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext();                                                    //コンテキストを閉じる
-
+        //UIGraphicsGetCurrentContext()!.clear(canvasRect)
         return imageAfterDraw!
     }
     override func didReceiveMemoryWarning() {
