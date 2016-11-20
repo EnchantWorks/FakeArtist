@@ -83,9 +83,9 @@ class UserAddViewController: UIViewController, UITableViewDelegate, UITableViewD
     internal func StartButton(sender: UIButton) {
         if userlist.emptyuser() {
             //ユーザーの順番をランダムに変更する。
-            userlist.randUserid()
+            //userlist.randUserid()
             //エセ芸術家をランダムに決める
-            userlist.randfakeartist()
+            userlist.preparefakeartist(width:self.view.bounds.width,height:self.view.bounds.height)
             //値の受け渡し
             let app:AppDelegate =
                 (UIApplication.shared.delegate as! AppDelegate)

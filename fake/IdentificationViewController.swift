@@ -25,8 +25,8 @@ class IdentificationViewController: UIViewController {
         let bHeight: CGFloat = 50
         let posX: CGFloat = self.view.bounds.width/2 - bWidth/2
         let posY: CGFloat = self.view.bounds.height/2 - bHeight/2
-        let label: UILabel = UILabel(frame: CGRect(x: posX, y: posY, width: bWidth, height: bHeight))
-        label.text = user.name + "の出番ですか？"
+        let label: UITextView = UITextView(frame: CGRect(x: posX, y: posY, width: bWidth, height: bHeight))
+        label.text = "あなたは\n"+user.name + "\nですか？"
         label.textAlignment = NSTextAlignment.center
         self.view.addSubview(label)
 
@@ -60,20 +60,15 @@ class IdentificationViewController: UIViewController {
     }
     //はいのボタンを押した時
     internal func YesMyButton(sender: UIButton) {
-        if userlist.stagenum == 0 {
+        //stagenum = 1の時、投票の出番なので投票の画面へ遷移。　ただし現在は絵を描く実装がないのですぐに投票へ飛ぶ
+        if userlist.stagenum == 1 {
             // 遷移するViewを定義する.
             let NextViewController: UIViewController = VoteViewController()
             self.present(NextViewController, animated: false, completion: nil)
         }
-        if userlist.isFake() {
-            // 遷移するViewを定義する.
-            let NextViewController: UIViewController = FakeArtistViewController()
-            self.present(NextViewController, animated: false, completion: nil)
-            }else{
-            // 遷移するViewを定義する.
-            let NextViewController: UIViewController = ArtistViewController()
-            self.present(NextViewController, animated: false, completion: nil)
-        }
+        // 遷移するViewを定義する.
+        let NextViewController: UIViewController = ArtistViewController()
+        self.present(NextViewController, animated: false, completion: nil)
     }
     //いいえのボタンを押した時
     internal func NoButton(sender: UIButton) {

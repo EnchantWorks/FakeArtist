@@ -17,6 +17,7 @@ class UserList{
     let title: [String] = ["Apple","Bear","Cat","Dog","Elephant","Firefly","Gandum","House","Italy","Jellyfish","Kazuma","Lion","Monkey","NorthKorean","Octopas","PPAP","Queen","Rabbit","Sneak","Titech","USA","Vampire","Weapon","X'mas","Yesterday","Zebra"]
     var titleid =  0
     let ColorList : [UIColor] = [UIColor.black,UIColor.red ,UIColor.green ,UIColor.blue ,UIColor.cyan ,UIColor.yellow ,UIColor.magenta ,UIColor.orange ,UIColor.purple ,UIColor.brown,UIColor.darkGray ,UIColor.lightGray ,UIColor.white ,UIColor.gray]
+    var Image = UIImage()
     
     func addUser(name:String,id:Int) {
         let newuser = User()
@@ -84,13 +85,24 @@ class UserList{
         }
         return true
     }
-    //エセ芸術家とお題をランダムに決めるメソッド
-    func randfakeartist() {
+    //エセ芸術家とお題をランダムに決め,ベースの絵を作成するメソッド
+    func preparefakeartist(width:CGFloat,height:CGFloat) {
+        randUserid()
         let idx = Int(arc4random()) % userlist.count
         userlist[idx].fakeartist = true
         titleid =  Int(arc4random()) % title.count
         print(userlist[idx].name)
         print(titleid)
+        let CanvasRect = CGRect(x: 0,y: 0,width: width,height: height/2)
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: width,height: height/2), false, 0.0)
+        var firstCanvasImage = UIImage()                                            //キャンバス用UIImage(まだ空っぽ)
+        UIColor.white.setFill()                                              //白色塗りつぶし作業1
+        UIRectFill(CanvasRect)                                                      //白色塗りつぶし作業2
+        firstCanvasImage.draw(in: CanvasRect)                                     //firstCanvasImageの内容を描く(真っ白)
+        firstCanvasImage = UIGraphicsGetImageFromCurrentImageContext()!              //何も描かれてないUIImageを取得
+        //CanvasView.contentMode = .scaleAspectFit                                    //contentModeの設定
+        Image = firstCanvasImage                                         //画面の表示を更新
+        UIGraphicsEndImageContext()//コンテキストを閉じる
         
     }
     //現手番のユーザーがエセ芸術家かどうか(trueはエセ芸術家である)
@@ -120,5 +132,8 @@ class UserList{
         votename = userlist[maxid].name
         return userlist[maxid].fakeartist
     }
-    
+    //画像の入れ替え
+    func getImage()-> UIImage {
+        return Image
+    }
 }

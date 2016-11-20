@@ -85,7 +85,7 @@ class VoteViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         userlist.votecom()
         //let app:AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
         userlist.phase()
-        if userlist.stagenum == 1 {
+        if userlist.stagenum == 2 {
             let NextViewController: UIViewController = ResultViewController()
             //viewの遷移
             self.present(NextViewController, animated: false, completion: nil)
